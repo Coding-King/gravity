@@ -13,11 +13,12 @@ public class GravityView extends RSSurfaceView {
 
 	int touchTracker = 0;
 	int particleCount;
-    public GravityView(Context context, int particleCount) {
+	boolean persistGravity = false;
+    public GravityView(Context context, int particleCount, boolean persist) {
         super(context);
         this.particleCount = particleCount;
+        if(persist) {
         touchTracker = 0;
-        
         Thread t = new Thread(new Runnable() {
 			@Override
 			public void run() {
@@ -36,6 +37,7 @@ public class GravityView extends RSSurfaceView {
 			}
 		});
         t.start();
+    }
     }
 
     private RenderScriptGL mRS;

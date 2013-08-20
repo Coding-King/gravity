@@ -45,4 +45,10 @@ public void onCreate(Bundle savedInstanceState) {
 
 }
 
+@Override
+protected void onDestroy() {
+	// TODO Auto-generated method stub
+	super.onDestroy();
+	MainActivity.notifyPartCountChanged();
+}
 }

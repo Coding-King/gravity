@@ -59,4 +59,23 @@
         android:layout_centerHorizontal="true"
         android:text="ToggleButton" />
 
+    <TextView
+        android:id="@+id/textView2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/textView1"
+        android:layout_below="@+id/wrapButton"
+        android:layout_marginTop="22dp"
+        android:text="Gravity at Last Point"
+        android:textAppearance="?android:attr/textAppearanceLarge" />
+
+    <ToggleButton
+        android:id="@+id/persistGravity"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBaseline="@+id/textView2"
+        android:layout_alignBottom="@+id/textView2"
+        android:layout_alignRight="@+id/accBar"
+        android:text="ToggleButton" />
+
 </RelativeLayout>

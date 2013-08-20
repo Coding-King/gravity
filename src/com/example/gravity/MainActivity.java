@@ -23,7 +23,10 @@ public class MainActivity extends Activity {
 	public static float delta = 0.96f;
 	public static float acc = 100.f;
 	public static boolean wrap = false;
+	public static boolean persistGravity;
+	
 	static MainActivity instance;
+	
 	
 	private GravityView mView;
 	/** Called when the activity is first created. */
@@ -31,19 +34,20 @@ public class MainActivity extends Activity {
 	public void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 
-		mView = new GravityView(this, partCount);
+		mView = new GravityView(this, partCount, true);
 		setContentView(mView);
 		
 		instance = this;
 	}
 	
 	public static void notifyPartCountChanged() {
-		instance.mView = new GravityView(instance, partCount);
+		instance.mView = new GravityView(instance, partCount, persistGravity);
 		instance.setContentView(instance.mView);
 	}
 	
 	public static void notifyGravityChanged(){
 		instance.mView.mRender.setGravity(delta, acc, wrap);
+		System.out.println(persistGravity);
 	}
 
 	@Override
